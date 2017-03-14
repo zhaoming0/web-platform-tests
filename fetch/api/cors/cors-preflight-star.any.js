@@ -1,8 +1,5 @@
-if (this.document === undefined) {
-  importScripts("/resources/testharness.js");
-  importScripts("../resources/utils.js");
-  importScripts("/common/get-host-info.sub.js");
-}
+// META: script=../resources/utils.js
+// META: script=/common/get-host-info.sub.js
 
 const url = get_host_info().HTTP_REMOTE_ORIGIN + dirname(location.pathname) + RESOURCES_DIR + "preflight.py",
       origin = location.origin // assuming an ASCII origin
@@ -41,5 +38,3 @@ preflightTest(true, false, "*", "*", "OK", ["X-Test", "1"])
 preflightTest(false, true, "*", "*", "OK", ["X-Test", "1"])
 preflightTest(false, true, "*", "", "GET", undefined)
 preflightTest(false, true, "*", "*", "GET", undefined)
-
-done();
