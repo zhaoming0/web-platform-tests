@@ -1,0 +1,12 @@
+<!doctype html>
+<script src=/resources/testharness.js></script>
+<script src=/resources/testharnessreport.js></script>
+<div id=log></div>
+<script>
+test(() => {
+  assert_false("onshow" in Notification.prototype)
+}, "Notification.prototype.onshow was dropped")
+test(() => {
+  assert_false("onclose" in Notification.prototype)
+}, "Notification.prototype.onclose was dropped")
+</script>
